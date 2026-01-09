@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Trần Đăng Khoa | .NET Developer Intern</title>
+    <!-- Nhúng font chữ Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0056b3; /* Màu xanh đậm chuyên nghiệp */
+            --secondary-color: #6c757d;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --header-text: #fff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* --- Header --- */
+        header {
+            background: var(--primary-color);
+            color: var(--header-text);
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.95em;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info a:hover { text-decoration: underline; }
+
+        /* --- Content Sections --- */
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* --- Học vấn & Mục tiêu --- */
+        .education-item {
+            margin-bottom: 15px;
+        }
+        .school-name { font-weight: bold; font-size: 1.1em; }
+        .gpa { color: #d63384; font-weight: bold; font-size: 0.9em; background: #fce4ec; padding: 2px 8px; border-radius: 4px;}
+
+        /* --- Kỹ năng (Tags style) --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .skill-category strong { display: block; margin-bottom: 5px; color: #495057; }
+        .tag {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            color: #495057;
+            font-weight: 500;
+        }
+        .tag.tech { background: #e3f2fd; color: #0d47a1; }
+
+        /* --- Dự án nổi bật (Horizon) --- */
+        .project-card {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #212529;
+            margin: 0;
+        }
+        
+        .project-link {
+            font-size: 0.9em;
+            color: var(--primary-color);
+            text-decoration: none;
+            border: 1px solid var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        .project-link:hover { background: var(--primary-color); color: white; }
+
+        .project-role { font-style: italic; color: #6c757d; margin-bottom: 10px; display: block;}
+        
+        .tech-stack-list {
+            margin: 10px 0;
+            padding: 0;
+            list-style: none;
+        }
+        .tech-stack-list li {
+            display: inline-block;
+            font-size: 0.85em;
+            background: #343a40;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .feature-list, .learning-list { padding-left: 20px; }
+        .feature-list li { margin-bottom: 5px; }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .skills-grid { grid-template-columns: 1fr; }
+            .project-header { flex-direction: column; gap: 10px; }
+            header { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>Trần Đăng Khoa</h1>
+            <p>Sinh viên CNTT (Năm 4) | Aspiring .NET Backend Developer</p>
+            
+            <div class="contact-info">
+                <span>📧 khoatran.it@gmail.com</span>
+                <span>📞 077 325 9363</span>
+                <a href="https://github.com/khoatran04-it" target="_blank">🔗 github.com/khoatran04-it</a>
+                <a href="https://os-horizon.site/" target="_blank">🌐 Portfolio: os-horizon.site</a>
+            </div>
+        </header>
+
+        <div class="main-content">
+            
+            <!-- MỤC TIÊU NGHỀ NGHIỆP -->
+            <div class="section">
+                <h2 class="section-title">Mục tiêu nghề nghiệp</h2>
+                <p>Tôi mong muốn được trực tiếp tham gia và quan sát các dự án thực tế để học hỏi kinh nghiệm, tiếp thu quy trình làm việc chuyên nghiệp (Agile/Scrum). Đồng thời, tôi khao khát phát triển chuyên sâu về công nghệ .NET/Cloud Computing và kỹ năng mềm (làm việc nhóm, phân tích nghiệp vụ) để trở thành một Full-stack Developer vững vàng trong tương lai.</p>
+            </div>
+
+            <!-- HỌC VẤN -->
+            <div class="section">
+                <h2 class="section-title">Học vấn</h2>
+                <div class="education-item">
+                    <div class="school-name">Viện Đào Tạo Quốc Tế NIIE - Đại Học Nguyễn Tất Thành</div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                        <span>Chuyên ngành: Công nghệ thông tin</span>
+                        <span class="gpa">GPA: 3.2/4.0</span>
+                    </div>
+                    <p style="margin-top: 5px; font-size: 0.95em; color: #555;">
+                        <em>Các môn tiêu biểu:</em> Website Development, Cloud Computing, Quy trình phần mềm Agile, Phân tích Dữ Liệu.
+                    </p>
+                </div>
+            </div>
+
+            <!-- KỸ NĂNG -->
+            <div class="section">
+                <h2 class="section-title">Kỹ năng chuyên môn</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <strong>Backend & Languages:</strong>
+                        <div>
+                            <span class="tag tech">C#</span>
+                            <span class="tag tech">ASP.NET Core 8</span>
+                            <span class="tag tech">Java</span>
+                            <span class="tag tech">Python</span>
+                            <span class="tag tech">SQL Server</span>
+                            <span class="tag tech">Entity Framework Core</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <strong>Frontend & Tools:</strong>
+                        <div>
+                            <span class="tag tech">HTML5/CSS3</span>
+                            <span class="tag tech">JavaScript</span>
+                            <span class="tag tech">ReactJS</span>
+                            <span class="tag tech">Bootstrap 5</span>
+                            <span class="tag tech">Git/GitHub</span>
+                            <span class="tag tech">Docker (Basic)</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 15px;">
+                    <strong>Kỹ năng mềm:</strong> 
+                    <span class="tag">Làm việc nhóm</span>
+                    <span class="tag">Tư duy giải quyết vấn đề</span>
+                    <span class="tag">Quản lý thời gian</span>
+                    <span class="tag">Đọc hiểu tài liệu tiếng Anh</span>
+                </div>
+            </div>
+
+            <!-- DỰ ÁN NỔI BẬT -->
+            <div class="section">
+                <h2 class="section-title">Dự án tiêu biểu</h2>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">HORIZON - E-commerce Tactical Platform</h3>
+                            <span class="project-role">Vai trò: Full-stack Developer (Solo)</span>
+                        </div>
+                        <a href="https://os-horizon.site/" target="_blank" class="project-link">Live Demo &rarr;</a>
+                    </div>
+
+                    <p><strong>Mô tả:</strong> Hệ thống thương mại điện tử B2C chuyên biệt cho thiết bị Gaming/Tactical. Dự án tập trung vào trải nghiệm mua sắm bảo mật, tối ưu SEO và quản trị vận hành thực tế.</p>
+                    
+                    <strong>Công nghệ sử dụng (Tech Stack):</strong>
+                    <ul class="tech-stack-list">
+                        <li>ASP.NET Core 8 MVC</li>
+                        <li>Entity Framework Core 8</li>
+                        <li>SQL Server</li>
+                        <li>Bootstrap 5</li>
+                        <li>Chart.js</li>
+                        <li>VnPay SDK</li>
+                        <li>Google Analytics 4</li>
+                    </ul>
+
+                    <strong>Tính năng chính (Key Features):</strong>
+                    <ul class="feature-list">
+                        <li>🛒 <strong>Thanh toán & Vận hành:</strong> Tích hợp cổng VnPay, quản lý kho nhập/xuất (FIFO), tính toán lợi nhuận ròng.</li>
+                        <li>🔍 <strong>SEO & Marketing:</strong> Tự động tạo URL Friendly (Slug), tích hợp Open Graph cho Facebook/Zalo, Email Marketing với Mailchimp.</li>
+                        <li>📊 <strong>Quản trị:</strong> Dashboard thống kê doanh thu, phân quyền (Identity Role-based), theo dõi hành vi người dùng (GA4).</li>
+                        <li>💬 <strong>CSKH:</strong> Tích hợp Livechat Tawk.to hỗ trợ khách hàng thời gian thực.</li>
+                    </ul>
+
+                    <strong>Bài học rút ra (Key Learnings):</strong>
+                    <ul class="learning-list">
+                        <li>Làm chủ quy trình phát triển End-to-End từ ý tưởng đến Deploy lên Cloud (SmarterASP).</li>
+                        <li>Kỹ năng thiết kế CSDL quan hệ chặt chẽ cho giao dịch tài chính.</li>
+                        <li>Tối ưu hóa bảo mật Web theo tiêu chuẩn OWASP.</li>
+                    </ul>
+                    
+                    <div style="margin-top: 10px;">
+                        <a href="https://github.com/khoatran04-it" style="font-size: 0.9em; text-decoration: none; color: #0056b3;">👉 Xem Source Code trên GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHỨNG CHỈ -->
+            <div class="section">
+                <h2 class="section-title">Chứng chỉ</h2>
+                <ul>
+                    <li>Chứng chỉ Tin học văn phòng MOS (Viện Đào Tạo Quốc Tế NIIE cấp).</li>
+                    <li>Chứng chỉ Tiếng Anh (Viện Đào Tạo Quốc Tế NIIE cấp).</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
