@@ -1,354 +1,313 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Trần Đăng Khoa - .NET Developer</title>
-    <!-- Nhúng Font chữ và Icon -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Resume - Tran Dang Khoa (.NET Developer)</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-green: #254131; 
-            --text-dark: #333;
-            --text-light: #666;
-            --bg-gray: #f0f2f5;
+            --azure-blue: #0078D4; /* Microsoft Azure Primary Blue */
+            --dark-blue: #005a9e;
+            --text-dark: #201f1e;
+            --text-light: #605e5c;
+            --bg-gray: #f3f2f1;
         }
 
         * { box-sizing: border-box; }
         
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e9eaec;
-            font-size: 14px;
+            background-color: #f8f9fa;
+            font-size: 13.5px;
             color: var(--text-dark);
+            line-height: 1.4;
         }
 
         .cv-container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 20px auto;
             background: white;
             display: flex;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            min-height: 297mm; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            min-height: 297mm; /* Standard A4 Height */
         }
 
-        /* --- CỘT TRÁI (SIDEBAR) --- */
+        /* --- LEFT COLUMN --- */
         .left-column {
-            width: 35%;
-            background-color: var(--primary-green);
+            width: 32%;
+            background-color: var(--azure-blue);
             color: white;
-            padding: 30px 20px;
-            text-align: left;
+            padding: 25px 20px;
         }
 
-        /* Avatar */
         .avatar-container {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         .avatar {
-            width: 150px;
-            height: 150px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            border: 4px solid rgba(255,255,255,0.3);
+            border: 3px solid rgba(255,255,255,0.5);
             object-fit: cover;
             background-color: white;
         }
 
         .my-name {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             margin: 10px 0 5px 0;
             text-transform: uppercase;
-            text-align: center;
+            letter-spacing: 1px;
         }
         .job-title {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 300;
-            opacity: 0.9;
-            margin-bottom: 30px;
-            text-align: center;
+            opacity: 0.95;
+            margin-bottom: 20px;
             display: block;
         }
 
-        /* Contact Info */
+        .sb-section { margin-bottom: 25px; }
+        .sb-title {
+            font-size: 15px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            font-size: 13px;
-        }
-        .contact-item i {
-            width: 25px;
-            text-align: center;
-            margin-right: 10px;
-            background: rgba(255,255,255,0.1);
-            padding: 6px;
-            border-radius: 50%;
-        }
-        .contact-item a { color: white; text-decoration: none; }
-
-        /* Sidebar Sections */
-        .sb-section { margin-bottom: 30px; }
-        .sb-title {
-            font-size: 18px;
-            text-transform: uppercase;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .sb-content { font-size: 13px; line-height: 1.6; text-align: justify;}
-        
-        /* Skill Bars */
-        .skill-item { margin-bottom: 12px; }
-        .skill-name { display: block; margin-bottom: 3px; }
-        .progress-bg {
-            background: rgba(255,255,255,0.2);
-            height: 6px;
-            border-radius: 3px;
-            overflow: hidden;
-        }
-        .progress-bar {
-            background: white;
-            height: 100%;
-        }
-
-        /* Tech Tags */
-        .tech-tag {
-            display: inline-block;
-            background: rgba(255,255,255,0.15);
-            padding: 4px 8px;
-            border-radius: 4px;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
             font-size: 12px;
         }
+        .contact-item i { width: 20px; margin-right: 8px; font-size: 14px; }
+        .contact-item a { color: white; text-decoration: none; word-break: break-all; }
 
-        /* --- CỘT PHẢI (MAIN CONTENT) --- */
-        .right-column {
-            width: 65%;
-            padding: 40px 30px;
-            background-color: white;
+        .tech-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin: 0 3px 6px 0;
+            font-size: 11px;
+            font-weight: 500;
         }
 
-        .main-section { margin-bottom: 35px; }
-        
+        .skill-list {
+            padding-left: 15px;
+            margin: 0;
+            font-size: 12px;
+        }
+        .skill-list li { margin-bottom: 5px; }
+
+        /* --- RIGHT COLUMN --- */
+        .right-column {
+            width: 68%;
+            padding: 30px 35px;
+        }
+
+        .main-section { margin-bottom: 25px; }
         .main-title {
-            font-size: 20px;
-            color: var(--primary-green);
+            font-size: 18px;
+            color: var(--azure-blue);
             text-transform: uppercase;
             font-weight: 700;
-            border-bottom: 2px solid var(--primary-green);
-            padding-bottom: 8px;
-            margin-bottom: 20px;
+            border-bottom: 2px solid var(--azure-blue);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
         }
-        .main-title i { margin-right: 10px; font-size: 22px; }
+        .main-title i { margin-right: 10px; }
 
-        /* Item Style */
-        .item { margin-bottom: 20px; }
-        
+        .item { margin-bottom: 15px; }
         .item-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 5px;
+            align-items: baseline;
         }
-        
-        .item-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #000;
-        }
-        
-        .item-subtitle {
-            font-style: italic;
-            color: var(--text-light);
-            font-size: 13px;
-        }
-        
-        .item-date {
-            font-weight: 700;
-            color: var(--primary-green);
-            font-size: 13px;
-            min-width: 80px;
-            text-align: right;
-        }
+        .item-title { font-size: 15px; font-weight: 700; color: #000; }
+        .item-date { font-weight: 700; color: var(--azure-blue); font-size: 12px; }
+        .item-subtitle { font-style: italic; color: var(--text-light); font-size: 13px; margin: 2px 0; }
 
         .item-desc {
-            margin-top: 8px;
+            margin: 8px 0 0 0;
             padding-left: 18px;
+            text-align: justify;
         }
-        .item-desc li {
-            margin-bottom: 6px;
-            line-height: 1.5;
-            color: #444;
+        .item-desc li { margin-bottom: 4px; color: #333; }
+
+        .tech-stack-line {
+            font-size: 12px;
+            margin-top: 5px;
+            color: var(--dark-blue);
+            font-weight: 600;
         }
 
-        /* Responsive Mobile */
-        @media (max-width: 768px) {
-            .cv-container { flex-direction: column; margin: 0; width: 100%; }
-            .left-column, .right-column { width: 100%; padding: 20px; }
-            .avatar { width: 120px; height: 120px; }
+        .links { margin-top: 8px; }
+        .links a {
+            color: var(--azure-blue);
+            text-decoration: none;
+            font-weight: 700;
+            margin-right: 15px;
+            font-size: 12px;
+        }
+
+        @media print {
+            body { background: none; }
+            .cv-container { box-shadow: none; margin: 0; width: 100%; }
         }
     </style>
 </head>
 <body>
 
     <div class="cv-container">
-        <!-- Cột Trái (Xanh) -->
+        <!-- Sidebar -->
         <div class="left-column">
             <div class="avatar-container">
-                <!-- Thay link ảnh của bạn vào src bên dưới -->
                 <img src="https://github.com/khoatran04-it.png" alt="Avatar" class="avatar">
-                <h1 class="my-name">Trần Đăng Khoa</h1>
+                <h1 class="my-name">Tran Dang Khoa</h1>
                 <span class="job-title">.NET Developer Intern</span>
             </div>
 
             <div class="sb-section">
+                <h3 class="sb-title">Contact</h3>
                 <div class="contact-item">
-                    <i class="fas fa-calendar-alt"></i> <span>2004</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone-alt"></i> <span>077 325 9363</span>
+                    <i class="fas fa-phone-alt"></i> <span>(+84) 77 325 9363</span>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i> 
-                    <a href="mailto:khoatran.it@gmail.com">khoatran04.it@gmail.com</a>
+                    <a href="mailto:khoatran04.it@gmail.com">khoatran04.it@gmail.com</a>
                 </div>
                 <div class="contact-item">
                     <i class="fab fa-github"></i> 
-                    <a href="https://github.com/khoatran04-it">github.com/khoatran04-it</a>
+                    <a href="https://github.com/khoatran04-it" target="_blank">khoatran04-it</a>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-globe"></i> 
-                    <a href="https://os-horizon.site">os-horizon.site</a>
+                    <a href="https://os-horizon.site" target="_blank">os-horizon.site</a>
                 </div>
                 <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i> <span>Quận 4, TP. Hồ Chí Minh</span>
+                    <i class="fas fa-map-marker-alt"></i> <span>District 4, HCMC</span>
                 </div>
             </div>
 
             <div class="sb-section">
-                <h3 class="sb-title">Kỹ năng chuyên môn</h3>
-                <div class="sb-content">
-                    <span class="tech-tag">C# / .NET Core 8</span>
+                <h3 class="sb-title">Technical Skills</h3>
+                <div style="margin-bottom: 10px;">
+                    <strong style="font-size: 12px; display:block; margin-bottom:5px;">Core & Backend:</strong>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">.NET Core 8</span>
                     <span class="tech-tag">ASP.NET MVC</span>
+                    <span class="tech-tag">Web API</span>
                     <span class="tech-tag">Entity Framework</span>
                     <span class="tech-tag">SQL Server</span>
-                    <span class="tech-tag">JavaScript / React</span>
-                    <span class="tech-tag">Git / GitHub</span>
-                    <span class="tech-tag">RESTful API</span>
+                </div>
+                <div>
+                    <strong style="font-size: 12px; display:block; margin-bottom:5px;">Frontend & Tools:</strong>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Bootstrap 5</span>
+                    <span class="tech-tag">Git/GitHub</span>
+                    <span class="tech-tag">Agile/Scrum</span>
                 </div>
             </div>
 
             <div class="sb-section">
-                <h3 class="sb-title">Kỹ năng mềm</h3>
-                
-                <div class="skill-item">
-                    <span class="skill-name">Làm việc nhóm</span>
-                    <div class="progress-bg"><div class="progress-bar" style="width: 80%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-name">Tư duy logic, tự vấn bản thân trước khi quyết định</span>
-                    <div class="progress-bg"><div class="progress-bar" style="width: 75%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-name">Quản lý thời gian trong công việc và cuộc sống</span>
-                    <div class="progress-bg"><div class="progress-bar" style="width: 90%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-name">Nghiên cứu tài liệu tiếng Anh</span>
-                    <div class="progress-bg"><div class="progress-bar" style="width: 70%"></div></div>
-                </div>
+                <h3 class="sb-title">Soft Skills</h3>
+                <ul class="skill-list">
+                    <li>Teamwork & Collaboration</li>
+                    <li>Problem-Solving & Critical Thinking</li>
+                    <li>Effective Time Management</li>
+                    <li>Technical Document Research</li>
+                </ul>
             </div>
             
             <div class="sb-section">
-                <h3 class="sb-title">Chứng chỉ</h3>
-                <ul style="padding-left: 20px; margin: 0;">
-                    <li>Chứng chỉ MOS (NIIE)</li>
-                    <li>Chứng chỉ Tiếng Anh (NIIE)</li>
+                <h3 class="sb-title">Certifications</h3>
+                <ul class="skill-list">
+                    <li>MOS (Microsoft Office Specialist)</li>
+                    <li>English Proficiency (NIIE)</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Cột Phải (Trắng) -->
+        <!-- Main Content -->
         <div class="right-column">
             
-            <!-- Học vấn -->
+            <!-- Summary -->
             <div class="main-section">
-                <h2 class="main-title"><i class="fas fa-graduation-cap"></i> Học vấn</h2>
+                <h2 class="main-title"><i class="fas fa-user"></i> Professional Summary</h2>
                 <div class="item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">Đại Học Nguyễn Tất Thành (NIIE)</div>
-                            <div class="item-subtitle">Chuyên ngành: Công nghệ thông tin</div>
-                        </div>
-                        <div class="item-date">Năm 4</div>
-                    </div>
-                    <ul class="item-desc">
-                        <li>GPA: <strong>3.2/4.0</strong></li>
-                        <li>Các môn tiêu biểu: Website Development,Network System, Cloud Computing, Quy trình phần mềm Agile.</li>
-                    </ul>
+                    <p style="margin: 0; text-align: justify;">
+                        Final-year IT student with a strong foundation in <strong>.NET Core 8</strong> and modern web development. 
+                        Proactive in building full-stack applications and solving complex architectural challenges. 
+                        Seeking a <strong>.NET Intern</strong> position to contribute to high-quality software projects while 
+                        advancing professional development skills in a real-world environment.
+                    </p>
                 </div>
             </div>
 
-            <!-- Mục tiêu nghề nghiệp -->
+            <!-- Education -->
             <div class="main-section">
-                <h2 class="main-title"><i class="fas fa-star"></i> Mục tiêu nghề nghiệp</h2>
+                <h2 class="main-title"><i class="fas fa-graduation-cap"></i> Education</h2>
                 <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Nguyen Tat Thanh University (NIIE)</div>
+                        <div class="item-date">2021 - Present</div>
+                    </div>
+                    <div class="item-subtitle">Bachelor of Information Technology</div>
                     <ul class="item-desc">
-                        <li>Em mong muốn được bước ra khỏi vùng an toàn của bản thân để tiếp cận với môi trường làm việc thực tế, nơi em có thể quan sát, học hỏi và rèn luyện kỹ năng chuyên môn thông qua các dự án cụ thể. </li>
-                        <li>Thông qua quá trình thực tập, em đặt mục tiêu tích lũy kiến thức thực tiễn, cải thiện tư duy lập trình, kỹ năng làm việc nhóm và khả năng giải quyết vấn đề cũng như thiết kế giải pháp và triển khai sản phẩm đáp ứng nhu cầu người dùng.</li>
-                        <li>Về lâu dài, em định hướng trở thành một lập trình viên chuyên nghiệp, có khả năng nắm bắt xu hướng công nghệ, phân tích thị trường và xây dựng các giải pháp phần mềm hiệu quả, sáng tạo. Em mong rằng khoản thời gian thực tập sẽ tạo ra giá trị cho công ty và cả bản thân em. </li>
+                        <li>Current GPA: <strong>3.2/4.0</strong></li>
+                        <li>Relevant Coursework: Web Development, Network Systems, Cloud Computing, Agile Process.</li>
                     </ul>
                 </div>
             </div>
             
-            <!-- Dự án -->
+            <!-- Projects -->
             <div class="main-section">
-                <h2 class="main-title"><i class="fas fa-briefcase"></i> Dự án tiêu biểu</h2>
+                <h2 class="main-title"><i class="fas fa-code"></i> Featured Projects</h2>
                 
-                <!-- Dự án Horizon -->
                 <div class="item">
                     <div class="item-header">
-                        <div>
-                            <div class="item-title">HORIZON - E-commerce Tactical Platform</div>
-                            <div class="item-subtitle">Vai trò: Full-stack Developer (Solo)</div>
-                        </div>
+                        <div class="item-title">HORIZON - E-commerce Tactical Platform</div>
                         <div class="item-date">2024</div>
                     </div>
-                    <div style="margin-top: 5px; font-style: italic; color: #555;">
-                        Tech Stack: ASP.NET Core 8, EF Core, SQL Server, Bootstrap 5, VnPay SDK.
-                    </div>
+                    <div class="item-subtitle">Full-stack Developer (Personal Project)</div>
+                    <div class="tech-stack-line">Tech: .NET Core 8, EF Core, SQL Server, Bootstrap 5, VnPay SDK</div>
                     <ul class="item-desc">
-                        <li><strong>Mô tả:</strong> Xây dựng hệ thống thương mại điện tử B2C hoàn chỉnh cho thị trường thiết bị Gaming/Tactical.</li>
-                        <li><strong>Thanh toán & Vận hành:</strong> Tích hợp cổng thanh toán VnPay, quản lý kho nhập/xuất, tính toán lợi nhuận.</li>
-                        <li><strong>Tối ưu hóa:</strong> Tự động tạo URL Friendly (Slug), tích hợp Open Graph SEO, Email Marketing (Mailchimp).</li>
-                        <li><strong>Bảo mật:</strong> Phân quyền người dùng (Identity), bảo mật theo chuẩn OWASP.</li>
-                        <li><strong>Kết quả:</strong> Deploy thành công lên host SmarterASP, tích hợp Google Analytics 4 để đo lường.</li>
+                        <li>Architected a B2C e-commerce platform for gaming/tactical gear from scratch.</li>
+                        <li>Integrated <strong>VnPay Gateway</strong> for secure transactions and automated warehouse inventory tracking.</li>
+                        <li>Optimized SEO using <strong>Friendly URLs (Slugs)</strong> and <strong>Open Graph</strong>; integrated Mailchimp for marketing automation.</li>
+                        <li>Secured the system using <strong>ASP.NET Identity</strong> and followed <strong>OWASP</strong> security best practices.</li>
+                        <li>Deployed to SmarterASP and utilized <strong>Google Analytics 4</strong> for traffic monitoring.</li>
                     </ul>
-                    <div style="margin-top: 10px;">
-                        🔗 <a href="https://os-horizon.site/" target="_blank" style="color: var(--primary-green); font-weight: bold; text-decoration: none;">Live Demo</a>
-                         | 
-                        🔗 <a href="https://github.com/khoatran04-it" target="_blank" style="color: var(--primary-green); font-weight: bold; text-decoration: none;">Source Code</a>
+                    <div class="links">
+                        <a href="https://os-horizon.site/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/khoatran04-it" target="_blank"><i class="fab fa-github"></i> Source Code</a>
                     </div>
                 </div>
+            </div>
 
-            <!-- Hoạt động / Khác -->
+            <!-- Activities -->
             <div class="main-section">
-                <h2 class="main-title"><i class="fas fa-star"></i> Hoạt động & Sở thích</h2>
+                <h2 class="main-title"><i class="fas fa-rocket"></i> Activities & Interests</h2>
                 <div class="item">
                     <ul class="item-desc">
-                        <li>Thường xuyên tham gia các diễn đàn công nghệ (Reddit r/dotnet, Codewar, Leetcode) để luyện tập và cập nhật kiến thức mới.</li>
-                        <li>Đã và đang tìm hiểu sâu về kiến thức Mạng Máy Tính</li>
-                        <li>Có kế hoạch rõ ràng để học tập và phát triển AI cho riêng mình.</li>
+                        <li>Active member of <strong>Reddit r/dotnet</strong>, <strong>Codewars</strong>, and <strong>LeetCode</strong> to refine coding logic.</li>
+                        <li>Deepening knowledge in <strong>Computer Networking</strong> and <strong>Cloud Infrastructure</strong>.</li>
+                        <li>Self-studying <strong>AI integration</strong> into web applications to enhance user experience.</li>
                     </ul>
                 </div>
             </div>
@@ -357,7 +316,4 @@
     </div>
 
 </body>
-
 </html>
-
-
