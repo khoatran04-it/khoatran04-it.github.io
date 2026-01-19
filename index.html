@@ -28,9 +28,9 @@
             margin: 0;
             padding: 0;
             background-color: var(--bg-page);
-            font-size: 13.5px; /* Cỡ chữ chuẩn cho A4 */
+            font-size: 12.5px; /* Giảm nhẹ font size để fit A4 */
             color: var(--text-dark);
-            line-height: 1.45;
+            line-height: 1.35; /* Co dòng lại một chút */
             display: flex;
             justify-content: center;
         }
@@ -38,12 +38,12 @@
         /* Thiết lập khổ giấy A4 chuẩn */
         .cv-container {
             width: 210mm; 
-            min-height: 297mm; /* Chiều cao A4 */
+            height: 297mm; /* Cố định chiều cao A4 */
             background: white;
             display: flex;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
             margin: 20px auto;
-            overflow: hidden; /* Tránh tràn lề khi in */
+            overflow: hidden; 
         }
 
         /* --- LEFT COLUMN (SIDEBAR) --- */
@@ -51,18 +51,18 @@
             width: 32%;
             background-color: var(--azure-blue);
             color: white;
-            padding: 30px 20px;
+            padding: 25px 20px; /* Giảm padding trên dưới */
             display: flex;
             flex-direction: column;
         }
 
         .avatar-container {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         .avatar {
-            width: 130px;
-            height: 130px;
+            width: 110px; /* Giảm kích thước ảnh chút xíu */
+            height: 110px;
             border-radius: 50%;
             border: 3px solid rgba(255,255,255,0.8);
             object-fit: cover;
@@ -70,123 +70,116 @@
         }
 
         .my-name {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
-            margin: 15px 0 5px 0;
+            margin: 12px 0 5px 0;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         
         .job-title {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 400;
             opacity: 0.95;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             display: block;
             border-bottom: 1px solid rgba(255,255,255,0.3);
-            padding-bottom: 15px;
+            padding-bottom: 10px;
         }
 
-        .sb-section { margin-bottom: 30px; }
+        .sb-section { margin-bottom: 25px; } /* Giảm khoảng cách giữa các mục sidebar */
         
         .sb-title {
-            font-size: 16px;
+            font-size: 15px;
             text-transform: uppercase;
             border-bottom: 2px solid rgba(255,255,255,0.4);
             padding-bottom: 5px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: 700;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 12px;
-            font-size: 12px;
+            margin-bottom: 8px;
+            font-size: 11.5px;
         }
-        .contact-item i { width: 22px; margin-right: 5px; font-size: 14px; text-align: center;}
+        .contact-item i { width: 20px; margin-right: 5px; font-size: 13px; text-align: center;}
         .contact-item a { color: white; text-decoration: none; }
 
         .tech-tag {
             display: inline-block;
             background: rgba(255,255,255,0.15);
-            padding: 4px 8px;
+            padding: 3px 6px;
             border-radius: 4px;
-            margin: 0 4px 6px 0;
-            font-size: 11.5px;
+            margin: 0 3px 5px 0;
+            font-size: 11px;
             font-weight: 500;
         }
 
-        .skill-group { margin-bottom: 15px; }
-        .skill-label { font-size: 12px; font-weight: 700; opacity: 0.9; display: block; margin-bottom: 5px; }
+        .skill-group { margin-bottom: 12px; }
+        .skill-label { font-size: 11.5px; font-weight: 700; opacity: 0.9; display: block; margin-bottom: 4px; }
 
-        .soft-skills li { margin-bottom: 6px; font-size: 12.5px; }
+        .soft-skills li { margin-bottom: 4px; font-size: 12px; }
 
         /* --- RIGHT COLUMN (MAIN) --- */
         .right-column {
             width: 68%;
-            padding: 35px 35px;
+            padding: 30px 30px; /* Giảm padding để có nhiều chỗ cho nội dung */
             display: flex;
             flex-direction: column;
         }
 
-        .main-section { margin-bottom: 28px; }
+        .main-section { margin-bottom: 20px; } /* Giảm margin các mục chính */
         
         .main-title {
-            font-size: 18px;
+            font-size: 17px;
             color: var(--azure-blue);
             text-transform: uppercase;
             font-weight: 700;
             border-bottom: 2px solid var(--azure-blue);
-            padding-bottom: 8px;
-            margin-bottom: 18px;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
         }
-        .main-title i { margin-right: 10px; font-size: 20px; }
+        .main-title i { margin-right: 10px; font-size: 18px; }
 
-        .item { margin-bottom: 18px; }
+        .item { margin-bottom: 12px; }
         
         .item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
         
-        .item-title { font-size: 16px; font-weight: 700; color: #222; }
-        .item-date { font-weight: 600; color: var(--azure-blue); font-size: 12.5px; }
-        .item-subtitle { font-style: italic; color: #555; font-size: 13.5px; margin-bottom: 8px; }
+        .item-title { font-size: 15px; font-weight: 700; color: #222; }
+        .item-date { font-weight: 600; color: var(--azure-blue); font-size: 12px; }
+        .item-subtitle { font-style: italic; color: #555; font-size: 13px; margin-bottom: 5px; }
 
         .item-desc {
             margin: 0;
             padding-left: 18px;
         }
-        .item-desc li { margin-bottom: 6px; color: #333; text-align: justify; }
+        .item-desc li { 
+            margin-bottom: 3px; /* Giảm khoảng cách giữa các gạch đầu dòng */
+            color: #333; 
+            text-align: justify; 
+        }
 
         .tech-stack-line {
-            font-size: 12.5px;
-            margin-bottom: 8px;
+            font-size: 11.5px;
+            margin-bottom: 6px;
             color: var(--dark-blue);
             font-weight: 600;
             background: #eef6fc;
-            padding: 5px 10px;
+            padding: 4px 8px;
             border-radius: 4px;
             display: inline-block;
         }
 
-        .links a {
-            color: var(--azure-blue);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 12.5px;
-            margin-right: 20px;
-            border: 1px solid var(--azure-blue);
-            padding: 3px 10px;
-            border-radius: 15px;
-        }
-
-        /* --- PRINT ADJUSTMENTS (Cho GoFullPage & Save as PDF) --- */
+        /* --- PRINT ADJUSTMENTS --- */
         @media print {
             body { 
                 margin: 0; 
@@ -196,11 +189,10 @@
                 box-shadow: none;
                 margin: 0;
                 width: 210mm;
-                height: 297mm; /* Force đúng khổ A4 */
+                height: 297mm; 
                 page-break-after: avoid;
                 page-break-inside: avoid;
             }
-            /* Ẩn các icon link không cần thiết khi in */
             a { text-decoration: none; color: black; }
         }
     </style>
@@ -338,7 +330,7 @@
                 <div class="item">
                     <ul class="item-desc">
                         <li><strong>Certifications:</strong> MOS Specialist (Excel/Word), English Certificate (NIIE), C# Certificate (FreeCodeCamp), Backend Development Certificate (FreeCodeCamp).</li>
-                        <li><strong>Self-Development:</strong> Researching Microservices Architecture and CI/CD Pipelines; studying user data analysis using Python and progressing toward automated analysis with AI.</li>
+                        <li><strong>Self-Development:</strong> Researching Microservices Architecture and CI/CD Pipelines; studying user data analysis using Python.</li>
                         <li><strong>Hobbies:</strong> Physical training, practicing mindfulness, reading news, and sharpening coding skills through CodeWar.</li>
                     </ul>
                 </div>
@@ -349,5 +341,3 @@
 
 </body>
 </html>
-
-
